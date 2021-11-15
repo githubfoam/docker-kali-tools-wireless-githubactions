@@ -6,11 +6,11 @@ LABEL org.opencontainers.image.authors="githubfoam"
 RUN apt-get update -y && apt-get upgrade -y && apt-get autoremove - && apt-get clean 
 
 RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections && \
-    apt-get install -y kali-tools-passwords && \
+    apt-get install -y kali-tools-wireless && \
     echo "########################### METAPACKAGE INFO ###########################" && \
-    apt depends kali-tools-passwords  && \
-    apt show kali-tools-passwords && \
-    apt-cache show kali-tools-passwords | grep Depends && \
+    apt depends kali-tools-wireless  && \
+    apt show kali-tools-wireless && \
+    apt-cache show kali-tools-wireless | grep Depends && \
     echo "########################### METAPACKAGE INFO ###########################"
 
 
